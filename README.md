@@ -10,10 +10,8 @@
 - [Configuration](#configuration)
 - [Running the ChatBot](#running-the-chatbot)
 - [Usage](#usage)
-- [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
-- [Acknowledgements](#acknowledgements)
 
 ## Overview
 
@@ -53,7 +51,7 @@ Follow the steps below to set up the Smart Chat Appointment System on your local
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/https://github.com/pratigya2/SmartChat-AppointmentSystem.git
+git clone https://github.com/yourusername/SmartChat-AppointmentSystem.git
 cd SmartChat-AppointmentSystem
 ```
 
@@ -180,34 +178,34 @@ After completing the installation and configuration steps, you're ready to run t
 
    ```plaintext
    AI: Hello! I'm here to help you. I can provide information from the FastAPI book or set an appointment date for you.
-   You: my
-   AI: Yes, your name is Pratigya Paudel. How can I assist you further, Pratigya?
-   You: What are the main topics covered in the FastAPI Book?
-   AI: [Detailed response based on the FastAPI Book content]
-   You: bye
-   AI: Thank you for chatting. Goodbye!
+   You: my name is pratigya paudel.
+   AI: I have stored your name as Pratigya Paudel. Could you please provide your phone number and email address as well?
+   You: can you set me an appointment
+   AI: Sure, I can help you with that. Please provide me with the date you would like to schedule the appointment for.
+   You: tomorrow
+   AI: Before I can book the appointment for tomorrow, could you please provide me with your phone number and email address?
    ```
 
-   *Type your messages after the `You:` prompt. To exit the chat, type `exit`, `quit`, or `bye`.*
+   *Type your messages after the `You:` prompt. To exit the chat, type `exit`.*
 
 ## Usage
 
-The Pratigya ChatBot serves two main purposes:
+The Smart Chat Appointment System serves two main purposes:
 
 1. **Providing Information from the FastAPI Book**
 
    - **Query Examples:**
      - "What are the main topics covered in the FastAPI Book?"
      - "Explain federated learning as described in the FastAPI Book."
-     - "Tell me about the YOLOv8 model from the FastAPI Book."
+     - "Tell me about the Prometheus from the FastAPI Book."
 
 2. **Booking Appointments**
 
    - **How to Book:**
-     - "I want to book an appointment on September 25th."
-     - "Schedule a meeting for October 10th."
+     - "I want to book an appointment on coming saturday."
+     - "Schedule a meeting for tomorrow."
    
-   - **Note:** Ensure you provide the date in a recognizable format. The chatbot will parse and confirm the booking.
+   - **Note:** The chatbot will parse any form of date and confirm the booking.
 
 ### Managing User Information
 
@@ -215,86 +213,14 @@ The chatbot can store and recall user information such as name, phone number, an
 
 - **Providing Information:**
   
-  - "My name is Prajesh."
-  - "My phone number is 9801234567."
-  - "My email is prajesh@example.com."
+  - "My name is Pratigya."
+  - "My phone number is 9883783923."
+  - "My email is pratigya@example.com."
 
 - **Querying Stored Information:**
   
   - "Can you recall my name?"
   - "What is my registered email?"
-
-## Troubleshooting
-
-Encountering issues? Here's how to resolve common problems:
-
-### 1. **Invalid OpenAI API Key**
-
-**Error Message:**
-
-```plaintext
-openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ...', ...}}
-```
-
-**Solution:**
-
-- **Verify API Key:**
-  - Ensure your OpenAI API key is correct and starts with `sk-`.
-  
-- **Set API Key Correctly:**
-  - Use a `.env` file or set it as an environment variable as described in the [Configuration](#configuration) section.
-
-- **Regenerate API Key:**
-  - If unsure, regenerate a new API key from [OpenAI's API Keys Page](https://platform.openai.com/account/api-keys).
-
-### 2. **Pydantic Validation Errors**
-
-**Error Message:**
-
-```plaintext
-ValidationError: 3 validation errors for User
-name
-  Field required [type=missing, input_value={}, input_type=dict]
-...
-```
-
-**Solution:**
-
-- **Ensure Optional Fields Have Defaults:**
-  - Confirm that all optional fields in your Pydantic models are set with default values (`None`).
-
-- **Review Model Definitions:**
-  - Check `user_management.py` to ensure models are correctly defined.
-
-### 3. **ChatBot Freezes During Document Processing**
-
-**Symptom:**
-
-The application hangs after loading and splitting documents.
-
-**Solution:**
-
-- **Reduce Number of Chunks:**
-  - Increase `chunk_size` and decrease `chunk_overlap` in `document_processor.py` to process fewer chunks.
-
-- **Monitor System Resources:**
-  - Ensure your machine has sufficient CPU and memory.
-
-- **Use a Different PDF:**
-  - Test with a well-structured PDF to rule out PDF-specific issues.
-
-### 4. **Tokenizers Parallelism Warning**
-
-**Warning Message:**
-
-```plaintext
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-```
-
-**Solution:**
-
-- **Set Environment Variable:**
-  - As described in the [Configuration](#configuration) section, set `TOKENIZERS_PARALLELISM=false`.
 
 ## Contributing
 
@@ -307,8 +233,8 @@ Contributions are welcome! If you'd like to enhance the Pratigya ChatBot, follow
 2. **Clone Your Fork**
 
    ```bash
-   git clone https://github.com/yourusername/Pratigya-ChatBot.git
-   cd Pratigya-ChatBot
+   git clone https://github.com/pratigya2/SmartChat-AppointmentSystem
+   cd SmartChat-AppointmentSystem
    ```
 
 3. **Create a New Branch**
@@ -345,14 +271,4 @@ Contributions are welcome! If you'd like to enhance the Pratigya ChatBot, follow
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). See the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-- **OpenAI**: For providing access to advanced language models.
-- **LangChain Community**: For developing the LangChain framework.
-- **Pydantic Developers**: For creating robust data validation tools.
-
----
-
-*Feel free to customize this README to better fit the specifics of your project, including adding sections like "Roadmap", "FAQs", or "Contact Information" as needed.*
+This project is licensed under the [Apache License 2.0](LICENSE). See the [LICENSE](LICENSE) file for details.
