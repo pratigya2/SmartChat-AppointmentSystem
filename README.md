@@ -113,6 +113,9 @@ Securely manage sensitive information like API keys by setting them as environme
 
    ```plaintext
    OPENAI_API_KEY=sk-your-openai-api-key
+   LANGCHAIN_TRACING_V2=true
+   LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
+   LANGCHAIN_API_KEY="ls-your-langchain-api-key"
    ```
 
    *Replace `sk-your-openai-api-key` with your actual OpenAI API key.*
