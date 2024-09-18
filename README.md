@@ -212,9 +212,9 @@ The Smart Chat Appointment System serves two main purposes:
 
    ## Demo
 
-Check out how the feature works in action!
+Check out how the chatbot works in action!
 
-![Feature Demo](Demo\Demo.gif)
+![Feature Demo](Demo/Demo.gif)
 
 *Above: A demo showing the core functionality of the app.*
 
