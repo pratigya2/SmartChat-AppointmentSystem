@@ -210,6 +210,14 @@ The Smart Chat Appointment System serves two main purposes:
    
    - **Note:** The chatbot will parse any form of date and confirm the booking.
 
+   ## Demo
+
+Check out how the feature works in action!
+
+![Feature Demo](Demo\Demo.gif)
+
+*Above: A demo showing the core functionality of the app.*
+
 ### Managing User Information
 
 The chatbot can store and recall user information such as name, phone number, and email. Initially, these details might be empty, and you can provide them as the conversation progresses.
